@@ -11,7 +11,7 @@
             --bg-gradient-start: #E0C9A6; /* 奶茶色 */
             --bg-gradient-mid: #D4A5A5;   /* 乾燥玫瑰 */
             --bg-gradient-end: #9E8C8C;   /* 暖灰 */
-            --text-color: #4A4A4A;        /* 深灰字體，比純黑柔和 */
+            --text-color: #4A4A4A;        /* 深灰字體 */
             --glass-bg: rgba(255, 255, 255, 0.25);
             --glass-border: rgba(255, 255, 255, 0.4);
             --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -33,12 +33,12 @@
             /* 背景漸層 */
             background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
             background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite; /* 讓背景緩慢流動 */
+            animation: gradientMove 15s ease infinite;
             overflow: hidden;
             position: relative;
         }
 
-        /* 背景裝飾圓球 (為了讓毛玻璃效果更明顯) */
+        /* 背景裝飾圓球 */
         .blob {
             position: absolute;
             border-radius: 50%;
@@ -82,12 +82,12 @@
 
         /* 毛玻璃卡片樣式 */
         .glass-card {
-            display: block; /* 讓 <a> 標籤變成區塊 */
-            text-decoration: none; /* 移除底線 */
+            display: block;
+            text-decoration: none;
             background: var(--glass-bg);
             box-shadow: var(--glass-shadow);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Safari 支援 */
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 20px;
             border: 1px solid var(--glass-border);
             padding: 40px 20px;
@@ -98,7 +98,6 @@
             overflow: hidden;
         }
 
-        /* 卡片懸停效果 (Hover) */
         .glass-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.35);
@@ -106,7 +105,6 @@
             border-color: rgba(255, 255, 255, 0.8);
         }
 
-        /* 卡片內文字與圖標 */
         .card-content h2 {
             font-size: 1.5rem;
             font-weight: 500;
@@ -120,14 +118,12 @@
             opacity: 0.8;
         }
 
-        /* 背景動畫 */
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* 手機版調整 */
         @media (max-width: 480px) {
             h1 { font-size: 2rem; }
             .glass-card { padding: 30px 15px; }
@@ -142,7 +138,7 @@
     <div class="container">
         <h1>生產一組</h1>
 
-        <a href="https://script.google.com/macros/s/AKfycbygbEkQVVdC1gF-6-adGX0zfc3gCXgJ4QwR-eeTYrnFZ3MxwXSeAwXDYhgIxTV6rJjnEw/exec" target="_blank" class="glass-card">
+        <a href="https://script.google.com/macros/s/AKfycbygbEkQVVdC1gF-6-adGX0zfc3gCXgJ4QwR-eeTYrnFZ3MxwXSeAwXDYhgIxTV6rJjnEw/exec" class="glass-card">
             <div class="card-content">
                 <div class="icon">📊</div>
                 <h2>效率日誌圖表</h2>
