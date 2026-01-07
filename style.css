@@ -110,10 +110,16 @@ h1 {
     color: var(--text-color);
     position: relative;
     overflow: hidden;
+    
+    /* 【新增】 增加卡片下方的距離，避免兩張卡片黏在一起 */
+    margin-bottom: 25px;
+
     /* 初始狀態稍微往下移，配合進場動畫 */
     transform: translateY(20px); 
     opacity: 0;
-    animation: cardFadeIn 0.8s ease-out 0.5s forwards; /* 延遲出現，讓標題先打完 */
+    
+    /* 基本動畫設定 (具體延遲時間交由下方的 nth-of-type 控制) */
+    animation: cardFadeIn 0.8s ease-out forwards; 
 }
 
 .glass-card:hover {
@@ -165,4 +171,18 @@ h1 {
 @media (max-width: 480px) {
     h1 { font-size: 2rem; }
     .glass-card { padding: 30px 15px; }
+}
+
+/* =========================================
+   6. 進階動畫控制 (讓卡片依序出現)
+   ========================================= */
+
+/* 第一張卡片延遲 0.5s 出現 (等待標題打字開頭) */
+.glass-card:nth-of-type(1) {
+    animation-delay: 0.5s;
+}
+
+/* 第二張卡片延遲 0.7s 出現 (營造瀑布流感) */
+.glass-card:nth-of-type(2) {
+    animation-delay: 0.7s;
 }
